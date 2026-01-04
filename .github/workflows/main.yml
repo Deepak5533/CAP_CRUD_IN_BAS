@@ -22,7 +22,7 @@ jobs:
     # 3️⃣ Build UI5 App in webapp folder
     - name: Build UI5 App
       run: |
-        cd app/project1/webapp               # folder where ui5.yaml exists
+        cd app/crud/webapp               # folder where ui5.yaml exists
         npm install                          # install dependencies
         npm install --save-dev @ui5/cli     # install UI5 CLI
         npm run build                        # run UI5 build
