@@ -1,0 +1,169 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="crud.controller.View1"
+>
+    <Page
+        id="page"
+        title="CRUD"
+        backgroundDesign="Solid"
+        titleAlignment="Center"
+    >
+        <HBox justifyContent="Center">
+            <Input
+                class="sapUiSmallMargin"
+                width="10rem"
+                placeholder="Filter ID"
+                id="filterid"
+                liveChange="filterid"
+
+            />
+            <Input
+                class="sapUiSmallMargin"
+                width="10rem"
+                placeholder="Filter Name"
+                id="filtercountryinput"
+                liveChange="filtername"
+                showValueHelp="true"
+                valueHelpRequest="namefilter"
+                showClearIcon="true"
+            />
+        </HBox>
+
+        <Table
+            items="{/Customers}"
+            id="table"
+            mode="SingleSelect"
+            selectionChange="selected"
+        >
+            <headerToolbar>
+                <OverflowToolbar>
+                    <Button
+                        press="create"
+                        text="Create"
+                        tooltip="Create a customer"
+                        icon="sap-icon://create"
+                    />
+                    <Button
+                        press="edit"
+                        text="Edit"
+                        enabled="false"
+                        id="edit"
+                        icon="sap-icon://edit"
+                    />
+
+                    <Button
+                        press="delete"
+                        text="Delete"
+                        enabled="true"
+                        id="delete"
+                        type="Reject"
+                        icon="sap-icon://delete"
+                    />
+
+                    <!-- <ToolbarSpacer /> -->
+                </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+                <Column>
+                    <Text text="ID" />
+                </Column>
+                <Column>
+                    <Text text="Name" />
+                </Column>
+                <Column>
+                    <Text text="Country" />
+                </Column>
+                <Column >
+                <Text text="Math"></Text>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{ID}" />
+                        <Text text="{name}" />
+                        <Text text="{country}" />
+                        <Text text="{math}"></Text>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+
+    <Dialog
+        id="dialog"
+        title="New Customer"
+    >
+        <VBox class="sapUiSmallMargin">
+            <!-- <Label
+                text="ID"
+                class="sapUiSmallMarginTop"
+            />
+            <Input
+                placeholder="Enter the ID"
+                id="id"
+            /> -->
+
+            <Label text="Name" />
+            <Input
+                placeholder="Enter the Name"
+                id="name"
+                
+            />
+
+            <Label text="Country" />
+            <Input
+                placeholder="Enter the Country"
+                id="country"
+            />
+        </VBox>
+        <beginButton>
+            <Button
+                text="Save"
+                press="save"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                text="cancel"
+                press="cancel"
+            />
+        </endButton>
+    </Dialog>
+
+    <Dialog
+        id="editdialog"
+        title="Edit Customer"
+    >
+        <VBox class="sapUiSmallMargin">
+            <!-- <Label
+                text="ID"
+                class="sapUiSmallMarginTop"
+            />
+            <Input
+                id="editid"
+                value=""
+                editable="false"
+            /> -->
+
+            <Label text="Name" />
+            <Input id="editname" />
+
+            <Label text="Country" />
+            <Input id="editcountry" />
+        </VBox>
+        <beginButton>
+            <Button
+                text="Update"
+                press="update"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                text="cancel"
+                press="editcancel"
+            />
+        </endButton>
+    </Dialog>
+</mvc:View>

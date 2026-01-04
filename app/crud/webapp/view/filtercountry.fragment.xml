@@ -1,0 +1,39 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        title="Select Country"
+        id="countryDialog"
+        contentWidth="300px"
+        contentHeight="400px"
+    >
+        <Table
+            items="{countryModel>/country}"
+            selectionChange="onCountrySelected"
+            mode="SingleSelect"
+            includeItemInSelection="true"
+            id="filtercountry"
+        >
+            <columns>
+                <Column>
+                    <Text text="Country" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{countryModel>}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
+        <endButton>
+            <Button
+                text="Close"
+                press=".onCloseCountryDialog"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

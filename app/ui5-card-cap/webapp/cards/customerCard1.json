@@ -1,0 +1,21 @@
+{
+  "sap.card": {
+    "type": "List",
+    "header": {
+      "title": "Customer List",
+      "subTitle": "Data from CAP OData"
+    },
+    "content": {
+      "data": {
+        "request": {
+          "url": "https://port4004-workspaces-ws-fii46.us10.trial.applicationstudio.cloud.sap/odata/v4/catalog/Customers?$filter=country eq 'USA'"
+        },
+        "path": "/value"
+      },
+      "item": {
+        "title": "{country}"
+       
+      }
+    }
+  }
+}

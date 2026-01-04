@@ -1,0 +1,16 @@
+<mvc:View
+  controllerName="ui5cardcap.controller.App"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+
+  <App>
+    <Page title="CAP Card Demo">
+      <content class="content">
+        <VBox id="cardBox" class="sapUiSmallMargin"/>
+        <VBox id="cardBox1" class="sapUiSmallMargin"></VBox>
+      </content>
+    </Page>
+  </App>
+
+</mvc:View>
